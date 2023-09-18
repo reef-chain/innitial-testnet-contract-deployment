@@ -14,7 +14,7 @@ async function main() {
         const token = await hre.reef.getContractAt(tokenName, tokenAddress, deployer);
         const tx = await factory.createPair(REEF_ADDRESS, token.address);
         const receipt = await tx.wait();
-        console.log(`REEF-${tokenName} pair created at ${receipt.logs[0].address}`);
+        console.log(`REEF-${tokenName} pair created at ${receipt.events[0].args.pair}`);
     };
 }
 

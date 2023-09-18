@@ -4,7 +4,9 @@ const { addAddress, toWei, REEF_ADDRESS } = require("./util");
 async function main() {
     const deployer = await hre.reef.getSignerByName("account1");
     const deployerAddress = await deployer.getAddress();
+    const skipVerification = process.env.SKIP_VERIFICATION == "true";
     console.log(`\n=====> Start deployment of ReefSwap on ${hre.network.name} with account ${deployer._substrateAddress} <=====`);
+    console.log(`Verify contracts: ${!skipVerification}`);
 
     // Deploy Factory
     console.log("Deploying factory...");
@@ -16,7 +18,7 @@ async function main() {
     const factory = await ReefswapV2Factory.deploy(...factoryArgs);
     console.log(`Factory deployed to ${factory.address}`);
     addAddress("ReefswapV2Factory", factory.address);
-    if (process.env.SKIP_VERIFICATION != "true") {
+    if (!skipVerification) {
         console.log("Verifying factory...");
         await hre.reef.verifyContract(
             factory.address,
@@ -36,7 +38,7 @@ async function main() {
     const router = await ReefswapV2Router.deploy(...routerArgs);
     console.log(`Router deployed to ${router.address}`);
     addAddress("ReefswapV2Router02", router.address);
-    if (process.env.SKIP_VERIFICATION != "true") {
+    if (!skipVerification) {
         console.log("Verifying router...");
         await hre.reef.verifyContract(
             router.address,
@@ -66,7 +68,7 @@ async function main() {
         // Create pair
         const tx = await factory.createPair(REEF_ADDRESS, token.address);
         const receipt = await tx.wait();
-        console.log(`REEF-${tokenName} pair created at ${receipt.logs[0].address}`);
+        console.log(`REEF-${tokenName} pair created at ${receipt.events[0].args.pair}`);
     };
 }
 

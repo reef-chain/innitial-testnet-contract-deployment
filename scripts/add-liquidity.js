@@ -17,8 +17,8 @@ async function main() {
     const otherTokenAddress = getAddress(otherTokenName);
     const otherToken = await hre.reef.getContractAt(otherTokenName, otherTokenAddress, account);
 
-    const amount1 = ethers.utils.parseEther("1000");
-    const amount2 = ethers.utils.parseEther("1000");
+    const amount1 = ethers.utils.parseEther("100");
+    const amount2 = ethers.utils.parseEther("100");
 
     await reefToken.approve(router.address, amount1);
     await otherToken.approve(router.address, amount2);
@@ -39,7 +39,7 @@ async function main() {
         10000000000
       );
     const receipt = await tx.wait();
-    console.log(receipt.logs);
+    console.log(receipt.events);
 
     const reefBalAfter = await reefToken.balanceOf(accountAddress);
     const otherBalAfter = await otherToken.balanceOf(accountAddress);
