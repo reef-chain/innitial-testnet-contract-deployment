@@ -29,51 +29,6 @@ module.exports = {
     solidity: {
         compilers: [
             {
-                version: "0.5.16",
-                settings: {
-                    optimizer: {
-                        enabled: true,
-                        runs: 999999,
-                    },
-                    outputSelection: {
-                        "*": {
-                            "*": ["metadata", "evm.bytecode", "evm.bytecode.sourceMap"],
-                            "": ["ast"],
-                        },
-                    },
-                },
-            },
-            {
-                version: "0.6.6",
-                settings: {
-                    optimizer: {
-                        enabled: true,
-                        runs: 999999,
-                    },
-                    outputSelection: {
-                        "*": {
-                            "*": ["metadata", "evm.bytecode", "evm.bytecode.sourceMap"],
-                            "": ["ast"],
-                        },
-                    },
-                },
-            },
-            {
-                version: "0.7.3",
-                settings: {
-                    optimizer: {
-                        enabled: true,
-                        runs: 999999,
-                    },
-                    outputSelection: {
-                        "*": {
-                            "*": ["metadata", "evm.bytecode", "evm.bytecode.sourceMap"],
-                            "": ["ast"],
-                        },
-                    },
-                },
-            },
-            {
                 version: "0.8.4",
                 settings: {
                     optimizer: {

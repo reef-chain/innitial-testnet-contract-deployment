@@ -3,18 +3,14 @@
     "version": "0.1.0",
     "scripts": {
         "compile": "hardhat compile",
-        "deploy-reef-swap": "yarn hardhat run ./scripts/deploy-reef-swap.js",
         "deploy-sqwid": "yarn hardhat run ./scripts/deploy-sqwid.js",
         "deploy-flipper": "yarn hardhat run ./scripts/deploy-flipper.js",
         "deploy-utils": "yarn hardhat run ./scripts/deploy-utils.js",
-        "deploy-all": "yarn deploy-reef-swap && yarn deploy-sqwid && yarn deploy-flipper && yarn deploy-utils",
-        "verify-reef-swap": "yarn hardhat run ./scripts/verify-reef-swap.js",
+        "deploy-all": "yarn deploy-sqwid && yarn deploy-flipper && yarn deploy-utils",
         "verify-sqwid": "yarn hardhat run ./scripts/verify-sqwid.js",
         "verify-flipper": "yarn hardhat run ./scripts/verify-flipper.js",
         "verify-utils": "yarn hardhat run ./scripts/verify-utils.js",
-        "verify-all": "yarn verify-reef-swap && yarn verify-sqwid && yarn verify-flipper && yarn verify-utils",
-        "create-pools": "yarn hardhat run ./scripts/create-reef-swap-pools.js",
-        "add-liquidity": "yarn hardhat run ./scripts/add-liquidity.js",
+        "verify-all": "yarn verify-sqwid && yarn verify-flipper && yarn verify-utils",
         "console": "yarn hardhat console"
     },
     "devDependencies": {
