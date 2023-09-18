@@ -21,8 +21,11 @@ const toWei = (amount) => {
     return wad.mul(amount);
 }
 
+const REEF_ADDRESS = "0x0000000000000000000000000000000001000000";
+
 module.exports = {
     addAddress,
     getAddress,
     toWei,
+    REEF_ADDRESS
 };
