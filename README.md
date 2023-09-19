@@ -2,7 +2,7 @@
 
 Scripts to deploy and verify bootstrap contracts for Reef Chain.
 
-**Note**: For ReefSwap contracts execute the command `npm run script-deploy` in the following [repo](https://github.com/reef-defi/reefswap).
+**Note**: For ReefSwap contracts execute the command `npm run script-deploy` in the following [repo](https://github.com/reef-chain/reefswap).
 
 ## Usage
 
