@@ -6,7 +6,7 @@ module.exports = {
     networks: {
         reef: {
           url: "ws://127.0.0.1:9944",
-          scanUrl: "http://localhost:8000",
+          scanUrl: "http://localhost:3002",
           seeds: {
             account1: process.env.MNEMONIC_LOCALHOST || "",
           }

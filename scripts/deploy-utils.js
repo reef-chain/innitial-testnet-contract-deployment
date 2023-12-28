@@ -15,6 +15,8 @@ async function main() {
         console.log("Verifying BalanceHelper...");
         await hre.reef.verifyContract(balanceHelper.address, "BalanceHelper", [], {
             compilerVersion: "v0.8.10+commit.fc410830",
+            optimization: true,
+            runs: 999999,
         });
     }
 
@@ -28,6 +30,8 @@ async function main() {
         console.log("Verifying Multicall...");
         await hre.reef.verifyContract(multicall.address, "Multicall3", [], {
             compilerVersion: "v0.8.10+commit.fc410830",
+            optimization: true,
+            runs: 999999,
         });
     }
 }

@@ -15,6 +15,8 @@ async function main() {
         console.log("Verifying Flipper...");
         await hre.reef.verifyContract(flipper.address, "Flipper", [], {
             compilerVersion: "v0.8.10+commit.fc410830",
+            optimization: true,
+            runs: 999999,
         });
     }
 }
